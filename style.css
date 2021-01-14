@@ -1,0 +1,186 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /* border: 1px solid red; */
+}
+
+body {
+  font-family: sans-serif;
+  background: #f4f4f4;
+  text-align: center;
+  height: 100%;
+  position: relative;
+}
+
+.header {
+  font-size: 2.5rem;
+}
+
+#showcase {
+  height: 100vh;
+}
+/* Utilities */
+
+.container {
+  height: 100%;
+  max-width: 1100px;
+  margin: auto;
+  padding: 2rem;
+  overflow: hidden;
+}
+
+.lead {
+  font-size: 1.1rem;
+}
+.alert {
+  position: absolute;
+  top: 0px;
+  left: 0;
+  background-color: #ff513b;
+  color: #f4f4f4;
+  width: 100%;
+  height: 55px;
+  padding: 1rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  visibility: hidden;
+}
+
+/* Buttons */
+
+.btn {
+  display: inline;
+  padding: 0.5rem 2rem;
+  margin: 0 2rem;
+  border: none;
+  border-radius: 5px;
+}
+
+.btn-primary {
+  background: #4cbb17;
+  color: #f4f4f4;
+}
+
+.btn-secondary {
+  background: #ff513b;
+  color: #f4f4f4;
+  visibility: hidden;
+}
+
+.btn-dark {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 2rem;
+  background: none;
+}
+
+/* Input styling */
+
+.form-input {
+  display: block;
+  width: 100%;
+  height: 40px;
+  border-radius: 10px;
+  margin: 1rem 0;
+  border: 1px #777 solid;
+}
+
+/* Todo Styling */
+.todo-list {
+  height: 100%;
+  width: 100%;
+  margin-top: 5rem;
+}
+
+#list {
+  list-style: none;
+  height: 100%;
+}
+
+#list .list-item {
+  margin-bottom: 1rem;
+  padding: 1rem 2rem;
+  font-size: 1.3rem;
+  /* background: #fff; */
+  border: 1px solid #333;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#list .list-item #close {
+  color: #ff513b;
+}
+
+/* Dark Mode */
+
+.dark-mode {
+  filter: invert(1) hue-rotate(180deg);
+}
+
+/* Media Queries */
+
+/* Mobile Portrait */
+
+@media (max-width: 500px) and (orientation: portrait) {
+  .alert {
+    height: 50px;
+  }
+  .btn-dark {
+    padding: 0rem;
+    margin: 0rem;
+    font-size: 1.2rem;
+    right: 20px;
+    top: 20px;
+  }
+  .header {
+    margin-top: 1rem;
+    font-size: 1.5rem;
+  }
+  #buttons {
+    display: flex;
+    flex-direction: column;
+  }
+  .btn-secondary {
+    margin-top: 0.5rem;
+  }
+}
+
+/* Mobile Landscape */
+
+@media (max-height: 400px) and (orientation: landscape) {
+  .btn-dark {
+    padding: 0;
+    margin: 0;
+    font-size: 1.2rem;
+    right: 30px;
+    top: 20px;
+  }
+}
+
+/* Tablet Portrait */
+
+@media (max-width: 800px) and (orientation: portrait) {
+  .btn-dark {
+    padding: 0rem;
+    margin: 0rem;
+    font-size: 1.7rem;
+    right: 30px;
+    top: 20px;
+  }
+}
+
+/* Tablet Landscape */
+
+@media (max-height: 800px) and (orientation: landscape) {
+  .btn-dark {
+    padding: 0;
+    margin: 0;
+    font-size: 1.7rem;
+    right: 40px;
+    top: 20px;
+  }
+}

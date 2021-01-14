@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task Master</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
+  </head>
+  <body>
+    <section id="showcase">
+      <!-- Main Container -->
+      <div class="container">
+        <!-- Dark mode toggle -->
+        <button class="btn btn-dark"><i class="fas fa-moon" id="toggle"></i></button>
+        <!-- Header and Input -->
+        <h1 class="header">Task Master</h1>
+        <input type="text" id="todo-input" class="form-input" />
+        <div class="alert" id="alert">Please input the task</div>
+        <!-- Submit and Clear buttons -->
+        <div id="buttons">
+          <button class="btn btn-primary" id="submit">Submit</button>
+          <button class="btn btn-secondary" id="clear">Clear</button>
+        </div>
+        <!-- Todo List -->
+        <div class="todo-list">
+          <ul id="list">
+            <li class="list-item">Task 1 <i class="fas fa-times-circle" id="close"></i></li>
+            <li class="list-item">Task 2 <i class="fas fa-times-circle" id="close"></i></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- JS file -->
+    <script src="app.js"></script>
+  </body>
+</html>
