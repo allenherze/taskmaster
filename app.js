@@ -46,12 +46,14 @@ function addTask() {
   }
 }
 
-function completeTasks(e) {
+function completeTask(e) {
   if (e.target.className === 'list-item') {
     e.target.style.textDecoration = 'line-through';
     e.target.style.color = '#ff513b';
   }
 }
+
+function deleteTask(params) {}
 
 // Event Listeners
 
@@ -59,4 +61,4 @@ darkBtn.addEventListener('click', darkMode);
 input.addEventListener('change', checkInput);
 clearBtn.addEventListener('click', clearInput);
 submitBtn.addEventListener('click', addTask);
-todoList.addEventListener('click', completeTasks);
+todoList.addEventListener('click', completeTask);
