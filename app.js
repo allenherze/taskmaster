@@ -34,7 +34,7 @@ function clearInput() {
 function addTask() {
   if (input.value !== '') {
     const li = document.createElement('li');
-    li.innerHTML = `<li class="list-item">${input.value} <i class="fas fa-times-circle" id="close"></i></li>`;
+    li.innerHTML = `<li class="list-item">${input.value}<i class="fas fa-times-circle" id="close"></i></li>`;
     todoList.appendChild(li);
     clearInput();
   } else {
@@ -44,13 +44,6 @@ function addTask() {
       alert.style.visibility = 'hidden';
       darkBtn.style.zIndex = 0;
     }, 3000);
-  }
-}
-
-function completeTask(e) {
-  if (e.target.className === 'list-item' && e.target.className != 'close') {
-    e.target.style.textDecoration = 'line-through';
-    e.target.style.color = '#ff513b';
   }
 }
 
