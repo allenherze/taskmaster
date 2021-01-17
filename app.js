@@ -6,6 +6,7 @@ const submitBtn = document.getElementById('submit');
 const clearBtn = document.getElementById('clear');
 const todoList = document.getElementById('list');
 const alert = document.getElementById('alert');
+const deleteBtn = document.querySelectorAll('#close');
 
 // Toggle Dark Mode
 function darkMode() {
@@ -47,13 +48,17 @@ function addTask() {
 }
 
 function completeTask(e) {
-  if (e.target.className === 'list-item') {
+  if (e.target.className === 'list-item' && e.target.className != 'close') {
     e.target.style.textDecoration = 'line-through';
     e.target.style.color = '#ff513b';
   }
 }
 
-function deleteTask(params) {}
+function deleteTask(e) {
+  if (e.target.id === 'close') {
+    e.target.parentElement.remove();
+  }
+}
 
 // Event Listeners
 
@@ -61,4 +66,4 @@ darkBtn.addEventListener('click', darkMode);
 input.addEventListener('change', checkInput);
 clearBtn.addEventListener('click', clearInput);
 submitBtn.addEventListener('click', addTask);
-todoList.addEventListener('click', completeTask);
+todoList.addEventListener('click', deleteTask);
