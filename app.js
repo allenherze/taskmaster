@@ -34,9 +34,12 @@ function clearInput() {
 function addTask() {
   if (input.value !== '') {
     const li = document.createElement('li');
-    li.innerHTML = `<li class="list-item">${input.value}<i class="fas fa-times-circle" id="close"></i></li>`;
+    li.className = 'list-item';
+    li.innerHTML = `${input.value}<i class="fas fa-times-circle" id="close"></i>`;
     todoList.appendChild(li);
     clearInput();
+    Store.addTasks(li.textContent);
+    console.log(li.textContent);
   } else {
     alert.style.visibility = 'visible';
     darkBtn.style.zIndex = '-1';
@@ -53,8 +56,42 @@ function deleteTask(e) {
   }
 }
 
+// Local storage
+
+class Store {
+  static getLocal() {
+    let tasks = [];
+    if (localStorage.getItem('tasks') === null) {
+      return tasks;
+    } else {
+      tasks = JSON.parse(localStorage.getItem('tasks'));
+    }
+
+    return tasks;
+  }
+
+  static addTasks(task) {
+    const tasks = Store.getLocal();
+
+    tasks.push(task);
+    localStorage.setItem('tasks', JSON.stringify(tasks));
+  }
+
+  static displayLocal() {
+    const tasks = Store.getLocal();
+
+    tasks.forEach((task) => {
+      const li = document.createElement('li');
+      li.className = 'list-item';
+      li.innerHTML = `${task}<i class="fas fa-times-circle" id="close"></i>`;
+      todoList.appendChild(li);
+    });
+  }
+}
+
 // Event Listeners
 
+document.addEventListener('DOMContentLoaded', Store.displayLocal);
 darkBtn.addEventListener('click', darkMode);
 input.addEventListener('change', checkInput);
 clearBtn.addEventListener('click', clearInput);
