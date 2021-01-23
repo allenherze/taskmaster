@@ -54,6 +54,7 @@ function deleteTask(e) {
   if (e.target.id === 'close') {
     e.target.parentElement.remove();
   }
+  Store.deleteTasks();
 }
 
 // Local storage
@@ -86,6 +87,16 @@ class Store {
       li.innerHTML = `${task}<i class="fas fa-times-circle" id="close"></i>`;
       todoList.appendChild(li);
     });
+  }
+
+  static deleteTasks() {
+    const tasks = Store.getLocal();
+
+    tasks.forEach((index) => {
+      tasks.splice(index, 1);
+    });
+
+    localStorage.setItem('tasks', JSON.stringify(tasks));
   }
 }
 
