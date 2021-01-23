@@ -53,8 +53,8 @@ function addTask() {
 function deleteTask(e) {
   if (e.target.id === 'close') {
     e.target.parentElement.remove();
+    Store.deleteTasks();
   }
-  Store.deleteTasks();
 }
 
 // Local storage
